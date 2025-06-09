@@ -1,0 +1,351 @@
+/* app/ProblemDescriptionPage.css */
+
+/* Define Avocado Green Colors as CSS Variables */
+:root {
+  --color-green-avocado-50: #f7fcf6;
+  --color-green-avocado-100: #eaf7e8;
+  --color-green-avocado-200: #d5f0d2;
+  --color-green-avocado-300: #bce8b4;
+  --color-green-avocado-400: #9dd794;
+  --color-green-avocado-500: #7fbd77; /* Main avocado green */
+  --color-green-avocado-600: #689e62;
+  --color-green-avocado-700: #517f4c;
+  --color-green-avocado-800: #3d613a;
+  --color-green-avocado-900: #2c432a; /* Darkest */
+
+  /* Neutral grays */
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+
+  /* Alert colors */
+  --color-red-50: #fef2f2;
+  --color-red-100: #fee2e2;
+  --color-red-200: #fecaca;
+  --color-red-700: #b91c1c;
+  --color-red-800: #991b1b;
+  --color-red-600: #dc2626;
+
+  --color-orange-100: #ffedd5;
+  --color-orange-800: #9a3412;
+}
+
+/* Global Layout and Typography */
+.page-container {
+  min-height: 100vh;
+  background: linear-gradient(
+    to bottom right,
+    var(--color-green-avocado-50),
+    var(--color-gray-50)
+  );
+  color: var(--color-gray-800);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  padding: 3rem 1rem; /* Adjust padding for different screen sizes manually or with media queries */
+}
+
+@media (min-width: 768px) {
+  /* md: equivalent */
+  .page-container {
+    padding: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* lg: equivalent */
+  .page-container {
+    padding: 4rem;
+  }
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 56rem; /* Equivalent to max-w-4xl */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header h1 {
+  font-size: 3.75rem; /* Equivalent to text-5xl */
+  line-height: 1.25; /* Equivalent to leading-tight */
+  font-weight: 800; /* Equivalent to font-extrabold */
+  color: var(--color-green-avocado-900);
+  margin-bottom: 1rem;
+  letter-spacing: -0.05em; /* Equivalent to tracking-tighter */
+}
+
+@media (min-width: 768px) {
+  .header h1 {
+    font-size: 4.5rem; /* Equivalent to md:text-6xl */
+  }
+}
+
+.header p {
+  font-size: 1.25rem; /* Equivalent to text-xl */
+  color: var(--color-gray-600);
+}
+
+.main-content {
+  max-width: 56rem; /* Equivalent to max-w-4xl */
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  border-radius: 1rem; /* Equivalent to rounded-xl */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 8px 10px -6px rgba(0, 0, 0, 0.1); /* Equivalent to shadow-xl */
+  padding: 2.5rem 3rem; /* Adjust padding for different screen sizes */
+  border: 1px solid var(--color-gray-100);
+}
+
+@media (min-width: 768px) {
+  .main-content {
+    padding: 3rem 4rem; /* Equivalent to md:p-12 */
+  }
+}
+@media (min-width: 1024px) {
+  .main-content {
+    padding: 4rem; /* Equivalent to lg:p-16 */
+  }
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+.section p {
+  font-size: 1.125rem; /* text-lg */
+  line-height: 1.625; /* leading-relaxed */
+  color: var(--color-gray-700);
+}
+
+.list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.list-bullet {
+  color: var(--color-green-avocado-500);
+  margin-right: 0.75rem;
+  font-size: 1.5rem; /* text-2xl */
+}
+
+.list p {
+  font-size: 1.125rem; /* text-lg */
+  color: var(--color-gray-800);
+}
+
+.inline-code {
+  background-color: var(--color-green-avocado-100);
+  color: var(--color-green-avocado-800);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem; /* rounded-md */
+  font-family: "SF Mono", "Menlo", "Consolas", "Liberation Mono", "Courier New",
+    monospace;
+  font-size: 1rem; /* text-base */
+}
+
+.max-span-code {
+  background-color: var(--color-orange-100);
+  color: var(--color-orange-800);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  font-family: "SF Mono", "Menlo", "Consolas", "Liberation Mono", "Courier New",
+    monospace;
+  font-size: 1rem;
+}
+
+.section h3 {
+  font-size: 2.25rem; /* text-3xl */
+  font-weight: 700; /* font-bold */
+  color: var(--color-gray-900);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.code-block {
+  background-color: var(--color-gray-800);
+  color: var(--color-green-avocado-200);
+  border-radius: 0.5rem; /* rounded-lg */
+  padding: 1rem;
+  font-family: "SF Mono", "Menlo", "Consolas", "Liberation Mono", "Courier New",
+    monospace;
+  font-size: 0.875rem; /* text-sm */
+  margin-bottom: 1rem;
+  overflow-x: auto; /* overflow-x-auto */
+}
+
+.code-block pre {
+  white-space: pre-wrap;
+}
+
+/* Analysis Box Styles */
+.analysis-box {
+  padding: 1.5rem;
+  border-radius: 0.75rem; /* rounded-xl */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+  margin-bottom: 1.5rem;
+  border: 1px solid;
+}
+
+.analysis-box h4 {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 700; /* font-bold */
+  margin-bottom: 0.75rem;
+}
+
+.analysis-box p {
+  font-size: 1rem; /* text-md */
+  font-family: "SF Mono", "Menlo", "Consolas", "Liberation Mono", "Courier New",
+    monospace;
+  margin-bottom: 0.5rem;
+}
+
+.analysis-code-block {
+  background-color: var(--color-green-avocado-900); /* Default to pass style */
+  color: var(--color-green-avocado-200);
+  border-radius: 0.375rem; /* rounded-md */
+  padding: 0.75rem;
+  font-family: "SF Mono", "Menlo", "Consolas", "Liberation Mono", "Courier New",
+    monospace;
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+  overflow-x: auto;
+}
+
+.analysis-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0.5rem;
+}
+
+.analysis-list li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem; /* text-md */
+}
+
+.analysis-list li code {
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-family: "SF Mono", "Menlo", "Consolas", "Liberation Mono", "Courier New",
+    monospace;
+  font-size: 0.875rem; /* Smaller code in lists */
+}
+
+/* Specific Analysis Box Colors */
+.analysis-box.pass {
+  background-color: var(--color-green-avocado-50);
+  border-color: var(--color-green-avocado-100);
+}
+.analysis-box.pass h4 {
+  color: var(--color-green-avocado-700);
+}
+.analysis-box.pass p {
+  color: var(--color-green-avocado-700);
+}
+.analysis-box.pass .analysis-code-block {
+  /* Override default for pass */
+  background-color: var(--color-green-avocado-900);
+  color: var(--color-green-avocado-200);
+}
+.analysis-box.pass .analysis-list li {
+  color: var(--color-green-avocado-800);
+}
+.analysis-box.pass .analysis-list li code {
+  background-color: var(--color-green-avocado-100);
+  color: var(--color-green-avocado-800);
+}
+.analysis-box .result-text--yes {
+  /* Apply to both if needed, but only pass uses this */
+  color: var(--color-green-avocado-600);
+  font-weight: 700;
+}
+
+.analysis-box.fail {
+  background-color: var(--color-red-50);
+  border-color: var(--color-red-100);
+}
+.analysis-box.fail h4 {
+  color: var(--color-red-700);
+}
+.analysis-box.fail p {
+  color: var(--color-red-700);
+}
+.analysis-box.fail .analysis-code-block {
+  /* Override default for fail */
+  background-color: var(--color-red-800);
+  color: var(--color-red-200);
+}
+.analysis-box.fail .analysis-list li {
+  color: var(--color-red-800);
+}
+.analysis-box.fail .analysis-list li code {
+  background-color: var(--color-red-100);
+  color: var(--color-red-800);
+}
+.analysis-box .result-text--no {
+  /* Apply to both if needed, but only fail uses this */
+  color: var(--color-red-600);
+  font-weight: 700;
+}
+
+/* Final Answer Box */
+.final-answer-box {
+  background-color: var(--color-green-avocado-200);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1); /* shadow-md */
+  border: 1px solid var(--color-green-avocado-300);
+  font-size: 1.125rem;
+}
+
+.final-answer-box h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-green-avocado-800);
+  margin-bottom: 0.75rem;
+}
+
+.final-answer-box p {
+  color: var(--color-green-avocado-900);
+  margin-bottom: 0.75rem;
+}
+
+.final-answer-code-block {
+  background-color: var(--color-green-avocado-800);
+  color: var(--color-green-avocado-100);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-family: "SF Mono", "Menlo", "Consolas", "Liberation Mono", "Courier New",
+    monospace;
+  font-size: 1.25rem; /* text-xl */
+  text-align: center;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 4rem;
+  color: var(--color-gray-500);
+  font-size: 0.875rem;
+}
+
+.footer p {
+  margin-top: 0.5rem;
+}

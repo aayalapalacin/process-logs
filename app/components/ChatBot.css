@@ -1,0 +1,236 @@
+/* ChatBot.css - Modern & Beautiful Styling using Global Avocado Green Variables */
+
+/* We no longer define :root variables here, assuming they are defined globally
+   in app/ProblemDescriptionPage.css or a similar global stylesheet. */
+
+/* Base container for the chat component */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 28rem;
+  padding: 1.5rem;
+  margin: 0 auto;
+  border: 1px solid var(--color-gray-200); /* Using global gray */
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12), 0 4px 10px rgba(0, 0, 0, 0.08); /* Softer, layered shadow */
+  background-color: var(
+    --color-white,
+    #ffffff
+  ); /* Fallback to white if --color-white isn't global */
+  font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Optional: Add a subtle gradient background to the container itself */
+.chat-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Using global avocado light green */
+  background: linear-gradient(
+    135deg,
+    var(--color-white, #ffffff) 0%,
+    var(--color-green-avocado-50) 100%
+  );
+  z-index: -1;
+  border-radius: inherit;
+  opacity: 0.5;
+}
+
+/* Chat Close Button (top-right X button) */
+.chat-close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--color-green-avocado-500); /* Avocado green */
+  color: var(--color-white, #ffffff); /* White text for contrast */
+  border: none;
+  font-size: 1.25rem;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 50%;
+  transition: background-color 0.2s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.chat-close-button:hover {
+  background-color: var(--color-green-avocado-600); /* Darker green on hover */
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.chat-close-button:active {
+  transform: scale(0.98);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Message display area */
+.message-display {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-height: 20rem;
+  overflow-y: auto;
+  padding-right: 0.75rem;
+  padding-bottom: 0.5rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Custom Scrollbar */
+.message-display::-webkit-scrollbar {
+  width: 8px;
+}
+
+.message-display::-webkit-scrollbar-track {
+  background: var(--color-green-avocado-100); /* Light avocado track */
+  border-radius: 10px;
+}
+
+.message-display::-webkit-scrollbar-thumb {
+  background: var(--color-green-avocado-500); /* Main avocado green thumb */
+  border-radius: 10px;
+  border: 2px solid var(--color-green-avocado-100);
+}
+
+.message-display::-webkit-scrollbar-thumb:hover {
+  background: var(--color-green-avocado-600);
+}
+
+/* Individual message bubble */
+.message-bubble {
+  padding: 0.85rem 1.1rem;
+  border-radius: 1.2rem;
+  max-width: 90%;
+  word-wrap: break-word;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); /* Using a generic light shadow */
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.message-bubble:hover {
+  transform: translateY(-1px);
+}
+
+/* User message specific styling */
+.message-bubble strong {
+  font-weight: 600;
+}
+
+.message-bubble:has(> strong:first-child[innertext^="User"]) {
+  background-color: var(--color-green-avocado-100); /* Light green for user */
+  align-self: flex-end;
+  border-bottom-right-radius: 0.5rem;
+  color: var(--color-gray-800); /* Using global gray */
+}
+
+/* AI message specific styling */
+.message-bubble:has(> strong:first-child[innertext^="AI"]) {
+  background-color: var(--color-green-avocado-50); /* Lighter green for AI */
+  align-self: flex-start;
+  border-bottom-left-radius: 0.5rem;
+  color: var(--color-gray-800); /* Using global gray */
+}
+
+/* Styling for preformatted code blocks within messages */
+.message-bubble pre.pre-code-block {
+  background-color: var(--color-gray-800); /* Dark grey for code blocks */
+  color: var(--color-white, #ffffff);
+  padding: 0.75rem;
+  overflow-x: auto;
+  border-radius: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+/* Styling for inline code within messages */
+.message-bubble code.inline-code-block {
+  background-color: var(
+    --color-green-avocado-200
+  ); /* Lighter avocado for inline code bg */
+  color: var(
+    --color-green-avocado-800
+  ); /* Darker avocado for inline code text */
+  padding: 0.2em 0.4em;
+  border-radius: 0.3em;
+  font-family: "SF Mono", "Consolas", "Liberation Mono", monospace;
+  font-size: 0.875rem;
+}
+
+/* Input Form */
+.input-form {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* Input field */
+.input-field {
+  flex-grow: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-gray-300); /* Using global gray */
+  border-radius: 0.75rem;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.08); /* Using a generic light shadow */
+  font-size: 1rem;
+  color: var(--color-gray-800); /* Using global gray */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+}
+
+.input-field::placeholder {
+  color: var(--color-gray-500); /* Using global gray */
+  opacity: 0.8;
+}
+
+.input-field:focus {
+  border-color: var(
+    --color-green-avocado-500
+  ); /* Avocado green border on focus */
+  box-shadow: 0 0 0 3px rgba(127, 189, 119, 0.2); /* Soft avocado green glow on focus */
+}
+
+/* Specific styling for the `setShow` button at the bottom of the chat */
+.setShow {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.setShow button {
+  padding: 0.75rem 1.5rem;
+  background-color: var(
+    --color-green-avocado-500
+  ); /* Main avocado green for this button */
+  color: var(--color-white, #ffffff);
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.1s ease,
+    box-shadow 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.setShow button:hover {
+  background-color: var(
+    --color-green-avocado-600
+  ); /* Darker avocado on hover */
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.setShow button:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}

@@ -1,8 +1,13 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import SectionHeader from "./components/SectionHeader";
 import "../styles/ProblemDescriptionPage.css"; // Import the plain CSS file
+import ChatBot from "./components/ChatBot";
 
 export default function ProblemDescriptionPage() {
+  const [showChat, setShowChat] = useState<boolean>(false);
+
   const exampleLogs = [
     "30 99 sign-in",
     "12 123 sign-out",
@@ -11,7 +16,6 @@ export default function ProblemDescriptionPage() {
     "16 45 sign-in",
     "16 55 sign-out",
   ];
-  const maxSpan = 20;
 
   return (
     <div className="page-container">
@@ -25,6 +29,15 @@ export default function ProblemDescriptionPage() {
       </header>
 
       <main className="main-content">
+        <div className="chatContainer">
+          {showChat ? (
+            <ChatBot setShowChat={setShowChat} />
+          ) : (
+            <div className="setShow">
+              <button onClick={() => setShowChat(true)}> Talk with Chat</button>
+            </div>
+          )}
+        </div>
         {/* Introduction */}
         <section className="section">
           <SectionHeader title="Understanding Application Logs" />

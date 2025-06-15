@@ -21,7 +21,7 @@ export default function ProblemDescriptionPage() {
     <div className="page-container">
       {/* Hero Section */}
       <header className="header">
-        <h1>User Session Analysis</h1>
+        <h1>Process Logs</h1>
         <p>
           Deciphering application logs to understand user behavior and identify
           quick sign-outs.

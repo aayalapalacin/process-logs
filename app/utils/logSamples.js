@@ -63,7 +63,6 @@ const logSamples = [
     maxSpan: 20,
     answer: ["800"],
   },
-  // --- New Log Samples (5 more) ---
   {
     log: [
       "10 1 sign-in",
